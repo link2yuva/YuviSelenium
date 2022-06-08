@@ -26,12 +26,18 @@ public class CreateLead {
 		driver.findElement(By.linkText("CRM/SFA")).click();
 		driver.findElement(By.linkText("Create Lead")).click();
 		driver.findElement(By.id("createLeadForm_companyName")).sendKeys("TestLeaf(11486)");
-		driver.findElement(By.id("createLeadForm_firstName")).sendKeys("Sharvesh");
-		driver.findElement(By.id("createLeadForm_lastName")).sendKeys("Yuvaraj");
-		WebElement ele = driver.findElement(By.id("createLeadForm_dataSourceId"));
-		Select dd = new Select (ele);
-		dd.selectByVisibleText("Conference");
-		Thread.sleep(5000);
+		driver.findElement(By.id("createLeadForm_firstName")).sendKeys("Priya");
+		driver.findElement(By.id("createLeadForm_lastName")).sendKeys("Raj");
+		driver.findElement(By.id("createLeadForm_firstNameLocal")).sendKeys("Priya Raj");
+		driver.findElement(By.name("departmentName")).sendKeys("Computer Science");
+		driver.findElement(By.id("createLeadForm_description")).sendKeys("3 yrs course");
+		driver.findElement(By.id("createLeadForm_primaryEmail")).sendKeys("link2priya@gmail.com");
+		
+		WebElement ele = driver.findElement(By.id("createLeadForm_generalStateProvinceGeoId"));
+		Select states = new Select (ele);
+		states.selectByVisibleText("New York");
+		driver.findElement(By.className("smallSubmit")).click();
+		Thread.sleep(10000);
 		driver.close();
 		
 		
